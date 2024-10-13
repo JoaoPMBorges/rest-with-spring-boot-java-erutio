@@ -27,7 +27,7 @@ public class MathController {
 	private Double ConvertToDouble(String number) {
 		if(number == null)return 0D;
 		String valor = number.replaceAll(",", ".");
-		if(isNumeric(valor)) return Double.parseDouble(valor);
+		if(isNumeric(valor)) return Double.parseDouble(valor); 
 		return 0D;
 	}
 
@@ -35,6 +35,7 @@ public class MathController {
 		if(number == null)return false;
 		String valor = number.replaceAll(",", ".");
 		return valor.matches("[-+]?[0-9]*\\.?[0-9]+");
+		
 		
 	}
 	
