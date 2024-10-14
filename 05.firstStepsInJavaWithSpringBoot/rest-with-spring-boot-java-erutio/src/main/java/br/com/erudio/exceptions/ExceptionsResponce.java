@@ -17,9 +17,7 @@ public class ExceptionsResponce implements Serializable {
 		this.message = message;
 		this.details = details;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
 	public Date getTimestamp() {
 		return Timestamp;
 	}

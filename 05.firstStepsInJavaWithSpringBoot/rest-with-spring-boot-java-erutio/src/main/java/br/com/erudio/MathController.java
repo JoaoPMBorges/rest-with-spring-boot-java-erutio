@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.erudio.exceptions.UnsupportedMathOperationException;
+
 @RestController
 public class MathController {
 	
@@ -17,9 +19,9 @@ public class MathController {
 	public Double sum(
 	  @PathVariable(value = "numberOne") String numberOne,
 	  @PathVariable(value = "numberTwo")String numberTwo
-	  ) throws Exception {
+	  ) throws UnsupportedMathOperationException {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo) ) {
-			throw new Exception();
+			throw new UnsupportedMathOperationException("Please set a numeric value");
 		}
 		return ConvertToDouble(numberOne) + ConvertToDouble(numberTwo);
 	}
